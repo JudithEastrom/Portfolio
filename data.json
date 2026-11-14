@@ -1,8 +1,24 @@
 {
   "settings": {
-    "siteName": "My Portfolio",
+    "siteName": "Art Portfolio",
     "theme": "light"
   },
-  "posts": [],
-  "photos": []
+  "posts": [
+    {
+      "title": "My First Painting",
+      "content": "This painting was inspired by the ocean...",
+      "category": "Art",
+      "date": "2023-10-01"
+    }
+  ],
+  "photos": [
+    {
+      "url": "https://images.unsplash.com/photo-1579783956637-c71492120802",
+      "category": "Painting"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1541963463532-d68c55056f38",
+      "category": "Sketch"
+    }
+  ]
 }

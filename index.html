@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio</title>
+    <link rel="stylesheet" href="/Portfolio/style.css">
 </head>
-<body>
-    <h1 id="name">Loading...</h1>
-    <p id="bio"></p>
-    <p id="projects"></p>
+<body class="theme-light">
+    <nav>
+        <div class="logo" id="site-name">Art Portfolio</div>
+        <ul>
+            <li><a href="index.html" class="active">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
 
-    <script>
-        // This fetches the data from your public JSON file
-        fetch('./data.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('name').innerText = data.name;
-                document.getElementById('bio').innerText = data.bio;
-                document.getElementById('projects').innerText = data.projects;
-            });
-    </script>
+    <header class="hero">
+        <h1 id="user-name">Artist Name</h1>
+        <p id="user-bio">Welcome to my gallery. Explore my latest works below.</p>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div id="photo-grid" class="grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Art Portfolio</p>
+    </footer>
+
+    <script src="/Portfolio/script.js"></script>
 </body>
 </html>
+
