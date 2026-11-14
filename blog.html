@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Art Portfolio</title>
-    <link rel="stylesheet" href="/Portfolio/style.css">
+    <title>Blog | Thoughts</title>
+    <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body class="theme-light">
+<body>
     <nav>
-        <div class="logo" id="site-name">Art Portfolio</div>
-        <ul>
-            <li><a href="index.html">Portfolio</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
-        </ul>
+        <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
+            <div class="logo">ARTIST.CO</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main class="container">
-        <h1 class="page-title">Blog Posts</h1>
-        <div id="blog-list" class="blog-container"></div>
-    </main>
+    <section class="container">
+        <h2 style="font-size: 3rem; margin-bottom: 50px;">Journal</h2>
+        
+        <div class="blog-card">
+            <span>October 24, 2023</span>
+            <h3>How I approach my color palette</h3>
+            <p>A brief summary of the blog post content goes here...</p>
+            <a href="#" style="color: var(--accent-color);">Read More &rarr;</a>
+        </div>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Art Portfolio</p>
-    </footer>
+        <div class="blog-card">
+            <span>September 12, 2023</span>
+            <h3>My studio setup and tools</h3>
+            <p>A brief summary of the blog post content goes here...</p>
+            <a href="#" style="color: var(--accent-color);">Read More &rarr;</a>
+        </div>
+    </section>
 
-    <script src="/Portfolio/script.js"></script>
+    <footer><p>&copy; 2023 Artist Name.</p></footer>
+    <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
+

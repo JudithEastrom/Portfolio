@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Portfolio</title>
-    <link rel="stylesheet" href="/Portfolio/style.css">
+    <title>Artist Portfolio | Home</title>
+    <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body class="theme-light">
+<body>
     <nav>
-        <div class="logo" id="site-name">Art Portfolio</div>
-        <ul>
-            <li><a href="index.html" class="active">Portfolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
+        <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
+            <div class="logo">ARTIST.CO</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1 id="user-name">Artist Name</h1>
-        <p id="user-bio">Welcome to my gallery. Explore my latest works below.</p>
+        <div class="container">
+            <h1>CREATIVE VISION</h1>
+            <p>Exploring the boundaries of digital and traditional media.</p>
+        </div>
     </header>
 
-    <main>
-        <section class="gallery">
-            <h2>Gallery</h2>
-            <div id="photo-grid" class="grid"></div>
-        </section>
-    </main>
-
     <footer>
-        <p>&copy; <span id="current-year"></span> Art Portfolio</p>
+        <p>&copy; 2023 Artist Name. All rights reserved.</p>
     </footer>
 
-    <script src="/Portfolio/script.js"></script>
+    <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
 
