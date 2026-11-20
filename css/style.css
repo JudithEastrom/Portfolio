@@ -1,82 +1,78 @@
+/* --- Global Variables & Base --- */
 :root {
-    /* --- Classic Dark (Solid & Deep) --- */
     --bg-color: #1A1A1A;
     --accent-color: #D4AF37;
     --text-main: #FFFFFF;
     --text-muted: #A0A0A0;
     --glass-bg: rgba(255, 255, 255, 0.08);
-
-    /* --- Light & Cold (Solid & Airy) --- */
-    body.theme-cold {
-        --bg-color: #F0F4F8;
-        --accent-color: #4A90E2;
-        --text-main: #2C3E50;
-        --text-muted: #7F8C8D;
-        --glass-bg: rgba(255, 255, 255, 0.7);
-    }
-
-    /* --- Autumn (The Falling Leaves) --- */
-    body.theme-autumn {
-        --bg-color: #6E3B23; /* Rich Russet Brown */
-        --accent-color: #D4AF37;
-        --text-main: #F5E6CC;
-        --text-muted: #E0A960;
-        --glass-bg: rgba(255, 255, 255, 0.1);
-    }
-
-    /* --- Winter (The Falling Snow) --- */
-    body.theme-winter {
-        --bg-color: #EBF3FA;
-        --accent-color: #A8DADC;
-        --text-main: #1B4965;
-        --text-muted: #729FCD;
-        --glass-bg: rgba(255, 255, 255, 0.8);
-    }
-
-    /* --- Spring (The Falling Sakura) --- */
-    body.theme-spring {
-        --bg-color: #FFF0F5;
-        --accent-color: #FFB7C5;
-        --text-main: #4A2C3E;
-        --text-muted: #8D6E81;
-        --glass-bg: rgba(255, 255, 255, 0.8);
-    }
-
-    /* --- Summer (The Sunrays & Waves) --- */
-    body.theme-summer {
-        background: radial-gradient(circle at 50% 0%, #FFD700 0%, #FFB347 40%);
-        --accent-color: #FF8C00;
-        --text-main: #FAF9F6; 
-        --text-muted: #E5B14A;
-        --glass-bg: rgba(255, 255, 255, 0.4);
-
-        /* The Ocean Waves at the bottom */
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 42%;
-            background: #4A90E2; /* Deep Ocean Blue */
-            border-radius: 50% 50% 0 0;
-            animation: waveMove 8s ease infinite;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 37%;
-            background: #76C8D3; /* Tropical Teal */
-            border-radius: 50% 50% 0 0;
-            animation: waveMove 8s ease infinite 1.2s;
-        }
-    }
 }
 
-/* --- Animation Logic --- */
+/* --- Theme Variations --- */
+body.theme-cold {
+    --bg-color: #F0F4F8;
+    --accent-color: #4A90E2;
+    --text-main: #2C3E50;
+    --text-muted: #7F8C8D;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+body.theme-autumn {
+    --bg-color: #6E3B23;
+    --accent-color: #D4AF37;
+    --text-main: #F5E6CC;
+    --text-muted: #E0A960;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-winter {
+    --bg-color: #EBF3FA;
+    --accent-color: #A8DADC;
+    --text-main: #1B4965;
+    --text-muted: #729FCD;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-spring {
+    --bg-color: #FFF0F5;
+    --accent-color: #FFB7C5;
+    --text-main: #4A2C3E;
+    --text-muted: #8D6E81;
+    --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-summer {
+    background: radial-gradient(circle at 50% 0%, #FFD700 0%, #FFB347 40%);
+    --accent-color: #FF8C00;
+    --text-main: #FAF9F6; 
+    --text-muted: #E5B14A;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+}
+
+body.theme-summer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    background: #4A90E2;
+    border-radius: 50% 50% 0 0;
+    animation: waveMove 8s ease infinite;
+}
+
+body.theme-summer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 37%;
+    background: #76C8D3;
+    border-radius: 50% 50% 0 0;
+    animation: waveMove 8s ease infinite 1.2s;
+}
+
+/* --- Animations --- */
 @keyframes fall {
     from { transform: translateY(-10vh) rotate(0deg); }
     to { transform: translateY(110vh) rotate(360deg); }
@@ -87,7 +83,7 @@
     50% { transform: translateX(-20px); }
 }
 
-/* --- The Particle System --- */
+/* --- Particle System --- */
 #particle-container {
     position: fixed;
     top: 0;
@@ -100,7 +96,6 @@
 }
 
 /* Visibility Control */
-/* Dark, Cold, and Summer have 0% visibility (No falling objects) */
 .theme-dark #particle-container,
 .theme-cold #particle-container,
 .theme-summer #particle-container {
@@ -110,38 +105,49 @@
 .particle {
     position: absolute;
     border-radius: 50%;
-    animation-name: fall;
+    animation: fall infinite linear; 
 }
 
 /* Theme Specific Shapes & Colors */
-.theme-autumn .particle { border-radius: 0 100% 0 100%; background: #D4AF37; }       /* Fall Leaves */
-.theme-winter .particle { border-radius: 50% 60% 50% 40%; background: #FFFFFF; }       /* Snowflakes */
-.theme-spring .particle { border-radius: 50% 0 50% 0; background: #FFB7C5; }           /* Sakura Petals */
+.theme-autumn .particle { border-radius: 0 100% 0 100%; background: #D4AF37; }       
+.theme-winter .particle { border-radius: 50% 60% 50% 40%; background: #FFFFFF; }       
+.theme-spring .particle { border-radius: 50% 0 50% 0; background: #FFB7C5; }           
 
 /* Theme Specific Speeds */
 .theme-autumn .particle { animation-duration: 12s; }
 .theme-winter .particle { animation-duration: 9s; }
 .theme-spring .particle { animation-duration: 7s; }
 
-/* Layout & Typography */
+/* --- Layout & Typography --- */
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.8;
     transition: background-color 0.8s ease, color 0.8s ease;
+    margin: 0;
+    font-family: sans-serif;
 }
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
     padding: 0 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
 }
 
-.nav-links { list-style: none; display: flex; gap: 30px; }
+nav:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: 0.3s; }
 .nav-links a:hover { color: var(--accent-color); }
 
@@ -157,6 +163,7 @@ nav {
 }
 
 h1 { font-size: 4rem; margin-bottom: 10px; }
+h2 { margin-bottom: 30px; }
 
 .theme-selector {
     padding: 8px 16px;
@@ -170,3 +177,87 @@ h1 { font-size: 4rem; margin-bottom: 10px; }
 @media (prefers-reduced-motion: reduce) {
     .particle { animation: none; }
 }
+
+/* --- Grid Layouts (Added to fix the alignment) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.blog-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+/* --- Component Styles --- */
+.shop-card {
+    position: relative; 
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.shop-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.shop-card:hover .hover-img { opacity: 1; }
+.shop-card:hover .main-img { transform: scale(1.05); }
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.blog-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-bottom: 1px solid var(--glass-bg);
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
