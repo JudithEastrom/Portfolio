@@ -6,7 +6,11 @@
     <title>Artist Portfolio | Home</title>
     <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body>
+<body class="theme-dark">
+
+    <!-- The Particle Background Layer -->
+    <div id="particle-container"></div>
+
     <nav>
         <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
             <div class="logo">ARTIST.CO</div>
@@ -17,21 +21,32 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div>
+                <select class="theme-selector" id="themeSwitcher">
+                    <option value="theme-dark">Classic Dark</option>
+                    <option value="theme-cold">Light & Cold</option>
+                    <option value="theme-autumn">Autumn</option>
+                    <option value="theme-winter">Winter</option>
+                    <option value="theme-spring">Spring</option>
+                    <option value="theme-summer">Summer</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
+    <header class="container" style="text-align: center; margin-top: 80px;">
+        <div class="content-card">
             <h1>CREATIVE VISION</h1>
-            <p>Exploring the boundaries of digital and traditional media.</p>
+            <p style="font-size: 1.5rem; color: var(--text-muted);">Exploring the boundaries of digital and traditional media.</p>
         </div>
     </header>
 
     <footer>
-        <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        <div class="container" style="text-align: center; padding: 40px;">
+            <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
-

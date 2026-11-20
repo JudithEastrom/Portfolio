@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Thoughts</title>
+    <title>Blog | The Journal</title>
     <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body>
+<body class="theme-dark">
+
+    <div id="particle-container"></div>
+
     <nav>
         <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
             <div class="logo">ARTIST.CO</div>
@@ -17,29 +20,55 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div>
+                <select class="theme-selector" id="themeSwitcher">
+                    <option value="theme-dark">Classic Dark</option>
+                    <option value="theme-cold">Light & Cold</option>
+                    <option value="theme-autumn">Autumn</option>
+                    <option value="theme-winter">Winter</option>
+                    <option value="theme-spring">Spring</option>
+                    <option value="theme-summer">Summer</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <section class="container">
-        <h2 style="font-size: 3rem; margin-bottom: 50px;">Journal</h2>
-        
+    <section class="container" style="margin-top: 80px;">
+        <h2 style="text-align: center; margin-bottom: 50px;">Journal Entries</h2>
+
         <div class="blog-card">
-            <span>October 24, 2023</span>
-            <h3>How I approach my color palette</h3>
-            <p>A brief summary of the blog post content goes here...</p>
-            <a href="#" style="color: var(--accent-color);">Read More &rarr;</a>
+            <small>October 15, 2023</small>
+            <h3>The Influence of Light on Color</h3>
+            <p>Explore how different light sources—from golden hour to cool moonlight—change the way we perceive color depth...</p>
+            <br>
+            <a href="#" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">Read Full Story &rarr;</a>
         </div>
 
         <div class="blog-card">
-            <span>September 12, 2023</span>
-            <h3>My studio setup and tools</h3>
-            <p>A brief summary of the blog post content goes here...</p>
-            <a href="#" style="color: var(--accent-color);">Read More &rarr;</a>
+            <small>September 28, 2023</small>
+            <h3>Finding Balance in Detail</h3>
+            <p>Why every brushstroke (or pixel) matters and how to find the perfect balance between the "big picture" and the tiny details...</p>
+            <br>
+            <a href="#" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">Read Full Story &rarr;</a>
+        </div>
+
+        <div class="blog-card">
+            <small>August 12, 2023</small>
+            <h3>My Studio Inspiration</h3>
+            <p>A look inside my creative space and how the organization (or organized chaos) of my studio fuels my daily output...</p>
+            <br>
+            <a href="#" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">Read Full Story &rarr;</a>
         </div>
     </section>
 
-    <footer><p>&copy; 2023 Artist Name.</p></footer>
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px;">
+            <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
+
 

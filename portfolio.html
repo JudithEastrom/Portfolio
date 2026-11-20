@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Work</title>
+    <title>Portfolio | Selected Works</title>
     <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body>
+<body class="theme-dark">
+
+    <div id="particle-container"></div>
+
     <nav>
         <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
             <div class="logo">ARTIST.CO</div>
@@ -17,40 +20,86 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div>
+                <select class="theme-selector" id="themeSwitcher">
+                    <option value="theme-dark">Classic Dark</option>
+                    <option value="theme-cold">Light & Cold</option>
+                    <option value="theme-autumn">Autumn</option>
+                    <option value="theme-winter">Winter</option>
+                    <option value="theme-spring">Spring</option>
+                    <option value="theme-summer">Summer</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <section class="container">
-        <h2 style="font-size: 3rem; margin-bottom: 50px;">Selected Works</h2>
+    <section class="container" style="margin-top: 60px;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Selected Gallery</h2>
+        
         <div class="portfolio-grid">
             <!-- Item 1 -->
             <div class="portfolio-item">
-                <img src="images/art1.jpg" alt="Artwork 1">
+                <img src="/Portfolio/images/art1.jpg" alt="Artwork 1">
                 <div class="portfolio-overlay">
-                    <h3>Project Name One</h3>
-                    <p>Digital Illustration | 2023</p>
+                    <h3>Project Alpha</h3>
+                    <p>Digital Painting | 2023</p>
                 </div>
             </div>
+
             <!-- Item 2 -->
             <div class="portfolio-item">
-                <img src="images/art2.jpg" alt="Artwork 2">
+                <img src="/Portfolio/images/art2.jpg" alt="Artwork 2">
                 <div class="portfolio-overlay">
-                    <h3>Project Name Two</h3>
-                    <p>Oil Painting | 2022</p>
+                    <h3>Project Beta</h3>
+                    <p>Oil on Canvas | 2022</p>
                 </div>
             </div>
+
             <!-- Item 3 -->
             <div class="portfolio-item">
-                <img src="images/art3.jpg" alt="Artwork 3">
+                <img src="/Portfolio/images/art3.jpg" alt="Artwork 3">
                 <div class="portfolio-overlay">
-                    <h3>Project Name Three</h3>
-                    <p>3D Sculpture | 2023</p>
+                    <h3>Project Gamma</h3>
+                    <p>3D Sculpture | 2024</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+                <img src="/Portfolio/images/art4.jpg" alt="Artwork 4">
+                <div class="portfolio-overlay">
+                    <h3>Project Delta</h3>
+                    <p>Mixed Media | 2023</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="portfolio-item">
+                <img src="/Portfolio/images/art5.jpg" alt="Artwork 5">
+                <div class="portfolio-overlay">
+                    <h3>Project Epsilon</h3>
+                    <p>Watercolor | 2021</p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="portfolio-item">
+                <img src="/Portfolio/images/art6.jpg" alt="Artwork 6">
+                <div class="portfolio-overlay">
+                    <h3>Project Zeta</h3>
+                    <p>Digital Collage | 2024</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer><p>&copy; 2023 Artist Name.</p></footer>
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px;">
+            <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
+

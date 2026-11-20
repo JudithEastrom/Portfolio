@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Get in Touch</title>
-   <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
+    <title>Contact | Let's Create</title>
+    <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body>
+<body class="theme-dark">
+
+    <div id="particle-container"></div>
+
     <nav>
         <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
             <div class="logo">ARTIST.CO</div>
@@ -17,20 +20,40 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div>
+                <select class="theme-selector" id="themeSwitcher">
+                    <option value="theme-dark">Classic Dark</option>
+                    <option value="theme-cold">Light & Cold</option>
+                    <option value="theme-autumn">Autumn</option>
+                    <option value="theme-winter">Winter</option>
+                    <option value="theme-spring">Spring</option>
+                    <option value="theme-summer">Summer</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <section class="container">
-        <h2 style="font-size: 3rem; text-align: center; margin-bottom: 50px;">Let's Collaborate</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Tell me about your project..."></textarea>
-            <button type="submit">SEND MESSAGE</button>
-        </form>
+    <section class="container" style="margin-top: 80px;">
+        <div class="content-card" style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 30px;">Work With Me</h2>
+            <p style="margin-bottom: 40px; color: var(--text-muted);">Have a project in mind? Whether it's a commission, a collaboration, or just a simple hello, I'd love to hear from you.</p>
+            
+            <form>
+                <input type="text" placeholder="Your Name" style="width: 100%; margin-bottom: 20px;" required>
+                <input type="email" placeholder="Email Address" style="width: 100%; margin-bottom: 20px;" required>
+                <textarea rows="5" placeholder="Tell me about your vision..." style="width: 100%; margin-bottom: 30px; resize: none;"></textarea>
+                <button type="submit" style="padding: 15px 40px; font-size: 1rem;">SEND MESSAGE</button>
+            </form>
+        </div>
     </section>
 
-    <footer><p>&copy; 2023 Artist Name.</p></footer>
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px;">
+            <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
+

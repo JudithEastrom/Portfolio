@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | The Artist</title>
+    <title>About | Meet the Artist</title>
     <link rel="stylesheet" href="/Portfolio/stylesheet/style.css">
 </head>
-<body>
+<body class="theme-dark">
+
+    <div id="particle-container"></div>
+
     <nav>
         <div class="container" style="display:flex; justify-content: space-between; width: 100%; align-items: center;">
             <div class="logo">ARTIST.CO</div>
@@ -17,27 +20,38 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div>
+                <select class="theme-selector" id="themeSwitcher">
+                    <option value="theme-dark">Classic Dark</option>
+                    <option value="theme-cold">Light & Cold</option>
+                    <option value="theme-autumn">Autumn</option>
+                    <option value="theme-winter">Winter</option>
+                    <option value="theme-spring">Spring</option>
+                    <option value="theme-summer">Summer</option>
+                </select>
+            </div>
         </div>
     </nav>
 
-    <section class="container">
-        <div class="content-split">
-            <div>
-                <img src="images/profile.jpg" alt="Artist Profile" style="width:100%; border-radius: 8px;">
+    <section class="container" style="margin-top: 80px;">
+        <div class="content-card" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="/Portfolio/images/profile.jpg" alt="Artist Profile" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             </div>
-            <div>
-                <h2 style="font-size: 3rem; margin-bottom: 20px;">The Artist Behind the Work</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">
-                    Write a compelling biography here. Talk about your journey, your influences, and what drives your creative process. 
-                </p>
-                <p>
-                    Your goal here is to build a connection with the viewer. Mention your education, your favorite mediums, and what makes your art unique in the current landscape.
-                </p>
+            <div style="flex: 1; min-width: 300px;">
+                <h2>The Artist's Journey</h2>
+                <p style="margin-bottom: 20px;">Write a brief and compelling introduction here. Talk about what drives your creativity and what inspires you most in the world around you.</p>
+                <p style="color: var(--text-muted);">"Art is not just what we see, but how we learn to see." Use this space to share your background—your education, your early influences, and the unique perspective that makes every piece of your work stand out.</p>
             </div>
         </div>
     </section>
 
-    <footer><p>&copy; 2023 Artist Name.</p></footer>
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px;">
+            <p>&copy; 2023 Artist Name. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="/Portfolio/scripts/script.js"></script>
 </body>
 </html>
